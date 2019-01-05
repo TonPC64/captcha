@@ -19,17 +19,17 @@ func TestCaptcha(t *testing.T) {
 		want string
 	}{
 		{
-			name: "pattern 1,op 1,num 1 and 1",
+			name: "should be `1 + ONE` when sent pattern 1,op 1,num 1 and 1",
 			args: args{1, 1, 1, 1},
 			want: "1 + ONE",
 		},
 		{
-			name: "pattern 2,op 1,num 1 and 1",
+			name: "should be `ONE + 1` when sent pattern 2,op 1,num 1 and 1",
 			args: args{2, 1, 1, 1},
 			want: "ONE + 1",
 		},
 		{
-			name: "pattern 3,op 1,num 1 and 1",
+			name: "should return empty string when sent pattern 3",
 			args: args{3, 1, 1, 1},
 			want: "",
 		},
