@@ -5,9 +5,8 @@ import (
 	"strings"
 )
 
-var operand = [3]string{"+", "-", "x"}
-var stringNum = [10]string{
-	"ZERO",
+var operator = [3]string{"+", "-", "x"}
+var operand = [9]string{
 	"ONE",
 	"TWO",
 	"THREE",
@@ -32,9 +31,9 @@ func Captcha(pat, n1, op, n2 int) string {
 	}
 
 	if pat == 1 {
-		return joinString(strconv.Itoa(n1), operand[op-1], stringNum[n2])
+		return joinString(strconv.Itoa(n1), operator[op-1], operand[n2-1])
 	} else if pat == 2 {
-		return joinString(stringNum[n2], operand[op-1], strconv.Itoa(n1))
+		return joinString(operand[n2-1], operator[op-1], strconv.Itoa(n1))
 	}
 	return ""
 }
@@ -48,7 +47,7 @@ func joinString(s ...string) string {
 }
 
 func validateNumber(n int) bool {
-	if n < 0 || n > 9 {
+	if n < 1 || n > 9 {
 		return false
 	}
 	return true

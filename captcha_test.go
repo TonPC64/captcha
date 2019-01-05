@@ -28,6 +28,11 @@ func TestCaptcha(t *testing.T) {
 			args: args{2, 1, 1, 1},
 			want: "ONE + 1",
 		},
+		{
+			name: "pattern 3,op 1,num 1 and 1",
+			args: args{3, 1, 1, 1},
+			want: "",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
